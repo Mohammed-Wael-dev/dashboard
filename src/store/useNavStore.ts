@@ -30,7 +30,7 @@ interface StoreState {
   setNavigator: (navigator: string) => void;
 }
 
-export const useStore = create<StoreState>((set) => ({
+export const useNavStore = create<StoreState>((set) => ({
   navigator:
     curruntPage.find((item) => item.to === window.location.pathname)?.label ||
     "Main Dashboard",

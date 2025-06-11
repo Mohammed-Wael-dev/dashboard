@@ -1,24 +1,23 @@
-import {
-  Input,
-  Flex,
-  IconButton,
-  Avatar,
-  Box,
-  Menu,
-} from "@chakra-ui/react";
+import { Input, Flex, IconButton, Avatar, Box, Menu } from "@chakra-ui/react";
 import { useColorMode } from "../ui/color-mode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
+import { faMagnifyingGlass, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
-import segun_adebayo from "../../assets/segun_adebayo.webp";
-import { AvatarMenu } from "./avatarMenu";
-import { NotificationMenu } from "./notificationMenu";
+import segun_adebayo from "../../assets/ProfileImg.webp";
+import { AvatarMenu } from "../sidebar/avatarMenu";
+import { NotificationMenu } from "../sidebar/notificationMenu";
+
+import { useSidebarHandler } from "../../store/useSidebarHandler";
+import { useWindowWidth } from "../../hooks/useWindowWidth";
 
 export const HeaderToolbar = () => {
   const { toggleColorMode, colorMode } = useColorMode();
+  const windowWidth = useWindowWidth();
+  const setSidebarHandler = useSidebarHandler((state) => state.toggleSidebar);
   return (
-    <Flex alignItems="center" borderRadius="4xl" bgColor="bg.primary" p="10px">
+    <Flex w={windowWidth <= 650 ? "100%" : "auto"} alignItems="center" borderRadius="4xl" bgColor="bg.primary" p="10px">
       <Flex
+      w={windowWidth <= 650 ? "100%" : "auto"}
         ps="10px"
         borderRadius="2xl"
         borderColor="transparent"
@@ -34,9 +33,14 @@ export const HeaderToolbar = () => {
           borderColor="transparent"
           bgColor="bg.secondary"
           placeholder="Search..."
-          w="150px"
+          maxW="150px"
         />
       </Flex>
+      {windowWidth <= 900 && (
+        <IconButton onClick={setSidebarHandler} bgColor="transparent" color="text.secondary" size="sm">
+          <FontAwesomeIcon icon={faBars} />
+        </IconButton>
+      )}
       <Menu.Root positioning={{ placement: "bottom-start" }}>
         <Menu.Trigger asChild>
           <Box>

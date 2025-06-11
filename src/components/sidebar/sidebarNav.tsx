@@ -8,7 +8,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router";
-import { useStore } from "../../store/useStore";
+import { useNavStore } from "../../store/useNavStore";
 export const SidebarNav = () => {
   const navigationLinks = [
     {
@@ -47,7 +47,7 @@ export const SidebarNav = () => {
     icon: any;
     label: string;
   }
-    const setNavigator = useStore((state) => state.setNavigator);
+    const setNavigator = useNavStore((state) => state.setNavigator);
   return (
     <>
       {navigationLinks.map(({ to, icon, label }: NavItemProps) => (
