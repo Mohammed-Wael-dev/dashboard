@@ -4,8 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import segun_adebayo from "../../assets/ProfileImg.webp";
-import { AvatarMenu } from "../sidebar/avatarMenu";
-import { NotificationMenu } from "../sidebar/notificationMenu";
+import { AvatarMenu } from "./avatarMenu";
+import { NotificationMenu } from "./notificationMenu";
 
 import { useSidebarHandler } from "../../store/useSidebarHandler";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
@@ -36,7 +36,7 @@ export const HeaderToolbar = () => {
           maxW="150px"
         />
       </Flex>
-      {windowWidth <= 900 && (
+      {windowWidth <= 1300 && (
         <IconButton onClick={setSidebarHandler} bgColor="transparent" color="text.secondary" size="sm">
           <FontAwesomeIcon icon={faBars} />
         </IconButton>

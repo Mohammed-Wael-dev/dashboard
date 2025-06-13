@@ -2,6 +2,14 @@ import { createSystem, defaultConfig } from "@chakra-ui/react";
 
 export const system = createSystem(defaultConfig, {
   theme: {
+    breakpoints: {
+      sm: "30em",
+      md: "48em",
+      lg: "62em",
+      custom: '87.5em',
+      xl: "80em",
+      "2xl": "96em",
+    },
     tokens: {
       colors: {
         brand: {
@@ -11,7 +19,7 @@ export const system = createSystem(defaultConfig, {
           white: { value: "rgb(255 255 255)" },
           purple: { value: "rgb(66 42 251)" },
           darkPurple: { value: "rgb(17 4 122)" },
-          lightBlue: { value: "rgb(106, 210, 255)" },
+          lightBlue: { value: "rgb(106 210 255)" },
           orange: { value: "rgb(249 115 22)" },
           red: { value: "rgb(245 57 57)" },
           green: { value: "rgb(34 197 94)" },

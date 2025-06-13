@@ -1,4 +1,5 @@
 import { Layout } from "./components/layout/layout";
+import { MainDashboard } from "./pages/MainDashboard";
 
 import { BrowserRouter, Route, Routes } from "react-router";
 function App() {
@@ -9,7 +10,7 @@ function App() {
           path="/"
           element={<Layout />}
           children={[
-            <Route index element={<></>} />,
+            <Route index element={<MainDashboard />} />,
             <Route path="settings" element={<></>} />,
             <Route path="profile" element={<></>} />,
             <Route path="*" element={<></>} />,

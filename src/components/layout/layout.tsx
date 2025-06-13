@@ -11,11 +11,11 @@ export const Layout = () => {
     const sidebarHandler = useSidebarHandler((state) => state.isOpen);
   
   return (
-    <Flex position="static" top={0} left={0} h="100vh">
-      {windowWidth > 900 ? <Sidebar /> : sidebarHandler && <Sidebar />}
+    <Flex position="static" top={0} left={0} minH="100vh">
+      {windowWidth > 1300 ? <Sidebar /> : sidebarHandler && <Sidebar />}
       <Box w="100vw" flex={1} bgColor="bg.secondary">
         <Header />
-        <Box bgColor="brand.gray">
+        <Box >
           <Outlet />
         </Box>
       </Box>

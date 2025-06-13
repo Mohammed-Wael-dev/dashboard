@@ -9,12 +9,13 @@ export const Sidebar = () => {
   return (
     <Box
       zIndex={1}
-      position={windowWidth > 900 ? "static" : "absolute"}
+      position={windowWidth > 1300 ? "static" : "absolute"}
       minH="100vh"
+      h="100%"
       w="280px"
       bgColor="bg.primary"
     >
-      {windowWidth <= 900 && (
+      {windowWidth <= 1300 && (
         <CloseButton
           onClick={() => setSidebarHandler()}
           position="absolute"
