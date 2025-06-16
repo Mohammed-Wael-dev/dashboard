@@ -15,7 +15,7 @@ import {
   faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
 
-export const CheckTableMenu = () => {
+export const DropdownMenu = () => {
   const CheckTableMenuContent = [
     {
       icon: faUser,

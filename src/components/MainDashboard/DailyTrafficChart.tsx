@@ -72,6 +72,7 @@ export const DailyTrafficChart = () => {
       p="20px"
       bgColor="bg.primary"
       gridColumn={{ base: "span 4", md: "span 2", lg: "span 1" }}
+      minWidth="0"
     >
       <Flex>
         <Box fontSize={{ md: "sm", lg: "xs" }} w="100%">
@@ -99,7 +100,7 @@ export const DailyTrafficChart = () => {
           <Text fontSize="0.7rem"> +2.45%</Text>
         </Flex>
       </Flex>
-      <Chart height="400px" type="bar" options={options} series={series} />
+      <Chart height="400px" width="100%" type="bar" options={options} series={series} />
     </Box>
   );
 };

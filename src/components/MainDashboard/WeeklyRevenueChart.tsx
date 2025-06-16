@@ -97,7 +97,7 @@ export const WeeklyRevenueChart = () => {
           </Icon>
         </Flex>
       </Flex>
-      <Chart height="400px" type="bar" options={options} series={series} />
+      <Chart height="400px" width="100%" type="bar" options={options} series={series} />
     </Box>
   );
 };

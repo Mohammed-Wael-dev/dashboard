@@ -18,7 +18,8 @@ export const YourPieChart = () => {
       h="500px"
       p="20px"
       bgColor="bg.primary"
-      gridColumn={{ base: "span 4", md: "span 1" }}
+      gridColumn={{ base: "span 4", md: "span 2", lg: "span 1" }}
+      minWidth="0"
     >
       <Flex h="100%" justifyContent="space-between" flexDir="column">
         <Box>
@@ -26,7 +27,7 @@ export const YourPieChart = () => {
             <Text fontWeight="semibold">Your Pie Chart</Text>
             <YourPieChartMenu />
           </Flex>
-          <Chart height="200px" type="pie" options={options} series={series} />
+          <Chart height="250px" width="100%" type="pie" options={options} series={series} />
         </Box>
         <Flex justifyContent="space-between" alignItems="end">
           <Box borderEnd="1px solid brand.lightGray">

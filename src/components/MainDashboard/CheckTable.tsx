@@ -7,7 +7,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import dataJson from "../../assets/database/data.json";
-import { CheckTableMenu } from "./CheckTableMenu";
+import { DropdownMenu } from "./DropdownMenu";
 export const CheckTable = () => {
   const columns = [
     {
@@ -46,17 +46,18 @@ export const CheckTable = () => {
       bgColor="bg.primary"
       gridColumn={{ base: "span 4",md: "span 2", lg: "span 2" }}
       overflowY="auto"
+      minWidth="0"
     >
       <Flex alignItems="center" justifyContent="space-between">
         <Text fontWeight="semibold">Check Table</Text>
-        <CheckTableMenu />
+        <DropdownMenu />
       </Flex>
 
       <Table.Root size={{ sm: "md", md: "sm", xl: "md" }}>
         {table.getHeaderGroups().map((headerGroup) => (
           <Table.Header key={headerGroup.id}>
             <Table.Row
-              fontSize={{ base: "0.6rem", lg: "0.5rem", xl: "0.7rem" }}
+              fontSize={{ base: "0.6rem", lg: "0.7rem", xl: "0.9rem" }}
             >
               {headerGroup.headers.map((header: any) => (
                 <Table.ColumnHeader bgColor="bg.primary" color="text.secondary">
@@ -77,7 +78,7 @@ export const CheckTable = () => {
               {row.getVisibleCells().map((cell) => (
                 <Table.Cell
                   bgColor="bg.primary"
-                  fontSize={{ base: "0.6rem", lg: "0.5rem", xl: "0.7rem" }}
+                  fontSize={{ base: "0.6rem", lg: "0.7rem", xl: "0.9rem"}}
                   fontWeight="semibold"
                   py="10px"
                   border="none"

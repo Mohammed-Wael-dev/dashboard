@@ -6,7 +6,6 @@ import {
   faWallet,
   faHouse,
 } from "@fortawesome/free-solid-svg-icons";
-
 export const AccountSammary = () => {
   const AccountSammary = [
     {

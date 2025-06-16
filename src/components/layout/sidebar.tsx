@@ -1,4 +1,4 @@
-import { Box, CloseButton, Flex, Heading, ListRoot } from "@chakra-ui/react";
+import { Box, CloseButton, Flex, Heading, ListRoot, useBreakpointValue  } from "@chakra-ui/react";
 import { SidebarNav } from "../sidebar/sidebarNav";
 
 import { useSidebarHandler } from "../../store/useSidebarHandler";

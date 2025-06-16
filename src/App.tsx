@@ -6,16 +6,12 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route
-          path="/"
-          element={<Layout />}
-          children={[
-            <Route index element={<MainDashboard />} />,
-            <Route path="settings" element={<></>} />,
-            <Route path="profile" element={<></>} />,
-            <Route path="*" element={<></>} />,
-          ]}
-        />
+        <Route path="/" element={<Layout />}>
+          <Route index element={<MainDashboard />} />,
+          <Route path="settings" element={<></>} />,
+          <Route path="profile" element={<></>} />,
+          <Route path="*" element={<></>} />,
+        </Route>
       </Routes>
     </BrowserRouter>
   );

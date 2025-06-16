@@ -107,7 +107,7 @@ export const WaveChart = () => {
           <span style={{ fontSize: "0.6rem" }}>^</span> +2.45%
         </Text>
       </Box>
-      <Chart height="300px" type="line" options={options} series={series} />
+      <Chart height="300px" width="100%" type="line" options={options} series={series} />
     </Box>
   );
 };

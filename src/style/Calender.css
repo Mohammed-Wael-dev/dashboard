@@ -1,0 +1,58 @@
+/* Main Container */
+.mainDashboard .react-calendar__month-view__weekdays {
+  /* background-color: rgb(247 248 254); */
+  border-radius: 10px;
+  font-size: 0.5rem;
+  font-weight: bold;
+  padding: 5px;
+  text-align: center;
+  cursor: default;
+  white-space: nowrap;
+}
+.mainDashboard .react-calendar__month-view__weekdays abbr {
+  text-decoration: initial !important;
+}
+/* Top navigation bar */
+.mainDashboard .react-calendar__navigation {
+  display: flex;
+  justify-content: center;
+}
+/* Nav buttons */
+.mainDashboard .react-calendar__navigation .react-calendar__navigation__label {
+  text-align: center;
+}
+.mainDashboard .react-calendar__navigation .react-calendar__navigation__arrow {
+  font-size: 2.5rem;
+}
+.mainDashboard .react-calendar__navigation__prev2-button,
+.mainDashboard .react-calendar__navigation__next2-button {
+  display: none;
+}
+.mainDashboard .react-calendar__navigation__prev-button,
+.mainDashboard .react-calendar__navigation__next-button {
+  font-size: 2.5rem;
+  color: rgb(66 42 251);
+  cursor: pointer;
+}
+/* Individual date tiles */
+.mainDashboard .react-calendar__tile {
+  cursor: pointer;
+  font-size: 0.7rem;
+  padding: 5px 0;
+}
+/* Selected date */
+.mainDashboard .react-calendar__tile--active,
+.mainDashboard
+  .react-calendar__tile--active.react-calendar__tile--active:hover {
+  background-color: rgb(66 42 251);
+  border-radius: 10px;
+  color: white;
+}
+/* Hovered date */
+.mainDashboard .react-calendar__tile:hover {
+  background-color: rgb(247 248 254);
+  color: black;
+}
+.mainDashboard .react-calendar__month-view__days__day--neighboringMonth {
+  color: rgb(163 174 208);
+}
