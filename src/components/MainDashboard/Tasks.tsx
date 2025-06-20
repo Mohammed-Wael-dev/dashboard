@@ -1,5 +1,5 @@
 import { Box, Flex, Text, Icon, List, Checkbox } from "@chakra-ui/react";
-import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "../common/DropdownMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
 

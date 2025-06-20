@@ -22,7 +22,7 @@ export const SidebarNav = () => {
       label: "NFT Marketplace",
     },
     {
-      to: "/Data-tables",
+      to: "/data-tables",
       icon: faChartSimple,
       label: "Data Tables",
     },

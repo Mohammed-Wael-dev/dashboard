@@ -7,7 +7,7 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import dataJson from "../../assets/database/data.json";
-import { DropdownMenu } from "./DropdownMenu";
+import { DropdownMenu } from "../common/DropdownMenu";
 export const CheckTable = () => {
   const columns = [
     {

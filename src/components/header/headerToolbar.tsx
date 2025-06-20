@@ -3,7 +3,7 @@ import { useColorMode } from "../ui/color-mode";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass, faBars } from "@fortawesome/free-solid-svg-icons";
 import { faBell, faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
-import segun_adebayo from "../../assets/ProfileImg.webp";
+import avatarIcon from "../../assets/avatarIcon.webp";
 import { AvatarMenu } from "./avatarMenu";
 import { NotificationMenu } from "./notificationMenu";
 
@@ -70,7 +70,7 @@ export const HeaderToolbar = () => {
           <Box>
             <Avatar.Root size="sm" cursor="pointer">
               <Avatar.Fallback name="Segun Adebayo" />
-              <Avatar.Image src={segun_adebayo} />
+              <Avatar.Image src={avatarIcon} />
             </Avatar.Root>
           </Box>
         </Menu.Trigger>

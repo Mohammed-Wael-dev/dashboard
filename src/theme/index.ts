@@ -33,7 +33,7 @@ export const system = createSystem(defaultConfig, {
               value: "rgb(247 248 254)",
             },
             tertiary: {
-              value: "rgb(244 247 254)",
+              value: "rgb(17 4 122)",
             },
           },
           text: {
@@ -55,6 +55,9 @@ export const system = createSystem(defaultConfig, {
             },
             secondary: {
               value: "rgb(11 20 55)",
+            },
+            tertiary: {
+              value: "rgb(66 42 251)",
             },
           },
           text: {

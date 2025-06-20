@@ -9,7 +9,7 @@ const curruntPage = [
     label: "NFT Marketplace",
   },
   {
-    to: "/Data-tables",
+    to: "/data-tables",
     label: "Data Tables",
   },
   {

@@ -1,6 +1,7 @@
-import { Layout } from "./components/layout/layout";
+import { Layout } from "./components/layout/Layout";
 import { MainDashboard } from "./pages/MainDashboard";
-
+import { NFTMarketplace } from "./pages/NFTMarketplace";
+import { DataTables } from "./pages/DataTables";
 import { BrowserRouter, Route, Routes } from "react-router";
 function App() {
   return (
@@ -8,8 +9,11 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<MainDashboard />} />,
-          <Route path="settings" element={<></>} />,
+          <Route path="nft-marketplace" element={<NFTMarketplace />} />,
+          <Route path="data-tables" element={<DataTables/>} />,
           <Route path="profile" element={<></>} />,
+          <Route path="sign-in" element={<></>} />,
+          <Route path="rtl-admin" element={<></>} />,
           <Route path="*" element={<></>} />,
         </Route>
       </Routes>
