@@ -16,7 +16,7 @@ export const DataTables = () => {
           overflowY: "auto",
           minWidth: "0",
           backgroundColor: "bg.primary",
-          gridColumn: { base: "span 2", md: "span 1" },
+          gridColumn: { base: "2", md: "span 1" },
         },
       }}
       gap="20px"
