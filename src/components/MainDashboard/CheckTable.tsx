@@ -37,7 +37,6 @@ export const CheckTable = () => {
     columns,
     getCoreRowModel: getCoreRowModel(),
   });
-  console.log(table.getRowModel());
   return (
     <Box
     w="100%"
@@ -60,7 +59,7 @@ export const CheckTable = () => {
               fontSize={{ base: "0.6rem", lg: "0.7rem", xl: "0.9rem" }}
             >
               {headerGroup.headers.map((header: any) => (
-                <Table.ColumnHeader bgColor="bg.primary" color="text.secondary">
+                <Table.ColumnHeader key={header.id} bgColor="bg.primary" color="text.secondary">
                   {header.isPlaceholder
                     ? null
                     : flexRender(
@@ -77,6 +76,7 @@ export const CheckTable = () => {
             <Table.Row key={row.id}>
               {row.getVisibleCells().map((cell) => (
                 <Table.Cell
+                  key={cell.id}
                   bgColor="bg.primary"
                   fontSize={{ base: "0.6rem", lg: "0.7rem", xl: "0.9rem"}}
                   fontWeight="semibold"

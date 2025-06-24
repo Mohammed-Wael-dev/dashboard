@@ -32,7 +32,7 @@ export const AllProjects = () => {
             rounded="2xl"
             bg="bg.primary"
           >
-            <Image src={project} alt="project" w="50px" h="50px" rounded="md" />
+            <Image loading="lazy" src={project} alt="project" w="50px" h="50px" rounded="md" />
             <Box w="full">
               <Heading
                 lineHeight="15px"

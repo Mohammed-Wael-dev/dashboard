@@ -1,4 +1,4 @@
-import { Link, Box, Flex, Text, Heading } from "@chakra-ui/react";
+import { Box, Flex, Text, Heading } from "@chakra-ui/react";
 import { NavLink, useLocation } from "react-router";
 import { useNavStore } from "../../store/useNavStore";
 import { HeaderToolbar } from "../header/headerToolbar";
@@ -11,31 +11,29 @@ export const Header = () => {
   const windowWidth = useWindowWidth();
 
   return (
-    <Box
-      as="header"
-      my="20px"
-      mx="30px"
-    >
+    <Box as="header" my="20px" mx="30px">
       <Box>
         <Flex fontSize="0.8rem" gapX="10px">
           <NavLink onClick={() => setNavigator("Main Dashboard")} to="/">
-            <Link
-              _hover={{ textDecorationColor: "text.primary" }}
+            <Text
+              cursor="pointer"
+              _hover={{ textDecoration: "underline" }}
               color="text.primary"
               fontFamily="DM Sans, sans-serif"
             >
               Pages
-            </Link>
+            </Text>
           </NavLink>
           <Text userSelect="none">/</Text>
           <NavLink to={location.pathname}>
-            <Link
-              _hover={{ textDecorationColor: "text.primary" }}
-              fontFamily="DM Sans, sans-serif"
+            <Text
+              cursor="pointer"
+              _hover={{ textDecoration: "underline" }}
               color="text.primary"
+              fontFamily="DM Sans, sans-serif"
             >
               {navigator}
-            </Link>
+            </Text>
           </NavLink>
         </Flex>
         <Flex

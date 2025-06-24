@@ -57,7 +57,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
               </Icon>
             )}
           </Box>
-          <Image rounded="2xl" src={img} />
+          <Image loading="lazy" rounded="2xl" src={img} />
           <Flex m="10px" flexDir="column" justifyContent="space-between">
             <Flex pos="relative" justifyContent="space-between">
               <Heading fontWeight="bold" color="text.primary" size="md">
@@ -65,6 +65,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
               </Heading>
               <Flex h="25px" w="85px" alignItems="center">
                 <Image
+                  loading="lazy"
                   pos="absolute"
                   border="1px solid white"
                   rounded="full"
@@ -74,6 +75,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
                   zIndex="3"
                 />
                 <Image
+                  loading="lazy"
                   pos="absolute"
                   ms="20px"
                   border="1px solid white"
@@ -84,6 +86,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
                   zIndex="2"
                 />
                 <Image
+                  loading="lazy"
                   pos="absolute"
                   ms="40px"
                   border="1px solid white"
@@ -117,7 +120,12 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
         </Flex>
         <Flex></Flex>
       </Flex>
-      <Flex px="10px" justifyContent="space-between" alignItems="center" mt="10px">
+      <Flex
+        px="10px"
+        justifyContent="space-between"
+        alignItems="center"
+        mt="10px"
+      >
         <Text fontWeight="semibold" fontSize="0.9rem" color="text.tertiary">
           Current Bid: {currentBid}ETH
         </Text>

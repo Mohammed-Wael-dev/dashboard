@@ -37,7 +37,7 @@ export const SidebarNav = () => {
       label: "Sign In",
     },
     {
-      to: "/rtl",
+      to: "/rtl-admin",
       icon: faHouse,
       label: "RTL Admin",
     },

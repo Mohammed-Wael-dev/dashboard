@@ -13,7 +13,7 @@ export const TopCreators = () => {
   const data = [
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user1} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user1} />
         <Text color="text.primary">@maddison_c21</Text>
       </Flex>,
       artwork: "9821",
@@ -21,7 +21,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user2} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user2} />
         <Text color="text.primary">@karl.will02</Text>
       </Flex>,
       artwork: "7032",
@@ -29,7 +29,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user3} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user3} />
         <Text color="text.primary">@andreea.1z</Text>
       </Flex>,
       artwork: "5204",
@@ -37,7 +37,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user4} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user4} />
         <Text color="text.primary">@abraham47.y</Text>
       </Flex>,
       artwork: "4309",
@@ -45,7 +45,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user5} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user5} />
         <Text color="text.primary">@simmmple.web</Text>
       </Flex>,
       artwork: "3871",
@@ -53,7 +53,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user5} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user5} />
         <Text color="text.primary">@horizon.ui</Text>
       </Flex>,
       artwork: "3152",
@@ -61,7 +61,7 @@ export const TopCreators = () => {
     },
     {
       name: <Flex alignItems="center" gapX="5px">
-        <Image rounded="full" w="25px" h="25px" src={user5} />
+        <Image loading="lazy" rounded="full" w="25px" h="25px" src={user5} />
         <Text color="text.primary">@venus.sys</Text>
       </Flex>,
       artwork: "2907",

@@ -67,6 +67,7 @@ export const History = () => {
           <Flex w="100%" justifyContent="space-between" key={index}>
             <Flex gapX="10px" alignItems="center">
               <Image
+               loading="lazy"
                 w="60px"
                 h="60px"
                 rounded="2xl"

@@ -4,6 +4,8 @@ import { NFTMarketplace } from "./pages/NFTMarketplace";
 import { DataTables } from "./pages/DataTables";
 import { BrowserRouter, Route, Routes } from "react-router";
 import { Profile } from "./pages/Profile";
+import { SignIn } from "./pages/SignIn";
+import { RTLAdmin } from "./pages/RTLAdmin";
 function App() {
   return (
     <BrowserRouter>
@@ -11,12 +13,11 @@ function App() {
         <Route path="/" element={<Layout />}>
           <Route index element={<MainDashboard />} />,
           <Route path="nft-marketplace" element={<NFTMarketplace />} />,
-          <Route path="data-tables" element={<DataTables/>} />,
-          <Route path="profile" element={<Profile/>} />,
-          <Route path="sign-in" element={<></>} />,
-          <Route path="rtl-admin" element={<></>} />,
-          <Route path="*" element={<></>} />,
+          <Route path="data-tables" element={<DataTables />} />,
+          <Route path="profile" element={<Profile />} />,
         </Route>
+        <Route path="rtl-admin" element={<RTLAdmin />} />,
+        <Route path="sign-in" element={<SignIn />} />,
       </Routes>
     </BrowserRouter>
   );

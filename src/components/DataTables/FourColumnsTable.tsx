@@ -1,4 +1,4 @@
-import { Box, Checkbox, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import { HeaderWithMenu } from "../common/HeaderWithMenu";
 import { CustomTable } from "../common/CustomTable";
 

@@ -138,7 +138,7 @@ export const ComplexTable = () => {
               fontSize={{ base: "0.6rem",md: "0.8rem", lg: "0.7rem", xl: "0.9rem" }}
             >
               {headerGroup.headers.map((header) => (
-                <Table.ColumnHeader bgColor="bg.primary" color="text.secondary">
+                <Table.ColumnHeader key={header.id} bgColor="bg.primary" color="text.secondary">
                   {flexRender(
                     header.column.columnDef.header,
                     header.getContext()
