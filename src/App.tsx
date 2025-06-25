@@ -1,4 +1,4 @@
-import { Layout } from "./components/layout/Layout";
+import { Layout } from "./components/Layout/Layout";
 import { MainDashboard } from "./pages/MainDashboard";
 import { NFTMarketplace } from "./pages/NFTMarketplace";
 import { DataTables } from "./pages/DataTables";
