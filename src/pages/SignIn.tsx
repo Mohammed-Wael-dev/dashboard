@@ -32,39 +32,22 @@ export const SignIn = () => {
       <Box pos="absolute" bottom="0" w="100%">
         <Footer />
       </Box>
-      {colorMode === "light" ? (
-        <IconButton
-          onClick={() => toggleColorMode()}
-          pos="absolute"
-          top="2%"
-          left="96%"
-          w="25px"
-          h="25px"
-          p="25px"
-          rounded="full"
-          bgColor="brand.purple"
-          color="white"
-          cursor="pointer"
-        >
-          <FontAwesomeIcon icon={faSun} />
-        </IconButton>
-      ) : (
-        <IconButton
-          onClick={() => toggleColorMode()}
-          pos="absolute"
-          top="2%"
-          left="96%"
-          w="25px"
-          h="25px"
-          p="25px"
-          rounded="full"
-          bgColor="brand.purple"
-          color="white"
-          cursor="pointer"
-        >
-          <FontAwesomeIcon icon={faMoon} />
-        </IconButton>
-      )}
+      <IconButton
+        onClick={toggleColorMode}
+        position="fixed"
+        top="1rem"
+        right="1rem"
+        w="40px"
+        h="40px"
+        p="0"
+        rounded="full"
+        bgColor="brand.purple"
+        color="white"
+        aria-label="Toggle color mode"
+        zIndex={999}
+      >
+        <FontAwesomeIcon icon={colorMode === "light" ? faMoon : faSun} />
+      </IconButton>
     </Box>
   );
 };

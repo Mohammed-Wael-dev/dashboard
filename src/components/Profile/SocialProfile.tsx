@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Text, Image } from "@chakra-ui/react";
 import profileBgImage from "../../assets/profileBgImg.webp";
-import profileImage from "../../assets/profileImg.webp";
+import avaratIcon from "../../assets/avatar2.webp";
 
 export const SocialProfile = () => {
   return (
@@ -13,7 +13,7 @@ export const SocialProfile = () => {
         h="100px"
       ></Box>
       <Flex pos="relative" justifyContent="center" mt="-50px">
-        <Image loading="lazy" src={profileImage} w="80px" h="80px" rounded="full" />
+        <Image loading="lazy" src={avaratIcon} w="80px" h="80px" rounded="full" />
       </Flex>
       <Box textAlign="center" mt="10px">
         <Heading size="lg">Adela Parkson</Heading>
