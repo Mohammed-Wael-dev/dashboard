@@ -2,7 +2,7 @@ import { Flex, Box, IconButton } from "@chakra-ui/react";
 import { SignInFormContainer } from "../components/SignIn/SignInContainer";
 import SignInInformation from "../assets/signInInformation.webp";
 import { useWindowWidth } from "../hooks/useWindowWidth";
-import { Footer } from "../components/layout/Footer";
+import { Footer } from "../components/Layout/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 import { useColorMode } from "../components/ui/color-mode";
