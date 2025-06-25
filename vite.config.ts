@@ -6,7 +6,6 @@ import compression from 'vite-plugin-compression';
 
 
 export default defineConfig({
-  base: './',
   plugins: [react(), tailwindcss(), visualizer({ open: true }), compression()],
   build: {
     rollupOptions: {
