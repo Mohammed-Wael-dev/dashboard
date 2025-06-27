@@ -61,6 +61,7 @@ export const CustomTable = ({ data, columns }: CustomTableProps) => {
                 border="none"
                 color="text.primary"
                 padding={{ base: "10px" }}
+                ps="0"
                 key={cell.id}
               >
                 {flexRender(cell.column.columnDef.cell, cell.getContext())}

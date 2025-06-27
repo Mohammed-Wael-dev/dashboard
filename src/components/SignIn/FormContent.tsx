@@ -1,22 +1,34 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import {
-  Field,
-  Fieldset,
-  Input,
-  Button,
-  Stack,
-  Flex,
-  Checkbox,
-  Text,
-  Box,
-} from "@chakra-ui/react";
+import { Button, Stack, Flex, Checkbox, Text, Box } from "@chakra-ui/react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
-const schema = z.object({
-  email: z.string().email(),
-  password: z.string().min(8),
-});
+import { InputFields } from "./InputFields";
+
+const getSchemaByFieldName = (fieldName: string) => {
+  const name = fieldName.toLowerCase();
+  switch (name) {
+    case "email":
+      return z.string().email("Please enter a valid email");
+    case "password":
+      return z.string().min(8, "Password must be at least 8 characters");
+    case "phone":
+      return z
+        .string()
+        .regex(/^\+?[\d\s-()+$*]+$/, "Please enter a valid phone number");
+    case "name":
+      return z.string().min(2, "Name must be at least 2 characters");
+    case "url":
+      return z.string().url("Please enter a valid URL");
+    default:
+      return z.string().min(1, "This field is required");
+  }
+};
+const inputType = ["email", "password"];
+const autoSchema = Object.fromEntries(
+  inputType.map((item) => [item, getSchemaByFieldName(item.toLowerCase())])
+);
+const schema = z.object(autoSchema);
 type FormFields = z.infer<typeof schema>;
 export const FormContent = () => {
   const navigate = useNavigate();
@@ -34,35 +46,11 @@ export const FormContent = () => {
   return (
     <Box as="form" onSubmit={handleSubmit(onSubmit)}>
       <Stack>
-        <Fieldset.Root>
-          <Fieldset.Content>
-            <Field.Root invalid={!!errors.email}>
-              <Field.Label color="text.primary">Email*</Field.Label>
-              <Input
-                type="email"
-                placeholder="mail@example.com"
-                {...register("email", { required: "Email is required" })}
-                rounded="xl"
-              />
-              {errors.email && (
-                <Field.ErrorText>{errors.email.message}</Field.ErrorText>
-              )}
-            </Field.Root>
-            <Field.Root invalid={!!errors.password}>
-              <Field.Label color="text.primary">Password*</Field.Label>
-              <Input
-                type="password"
-                {...register("password", {
-                  required: "Password is required",
-                })}
-                rounded="xl"
-              />
-              {errors.password && (
-                <Field.ErrorText>{errors.password.message}</Field.ErrorText>
-              )}
-            </Field.Root>
-          </Fieldset.Content>
-        </Fieldset.Root>
+        <InputFields
+          register={register}
+          errors={errors}
+          inputType={inputType}
+        />
         <Flex justifyContent="space-between" px="5px">
           <Checkbox.Root>
             <Checkbox.HiddenInput />

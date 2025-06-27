@@ -6,6 +6,7 @@ import "./index.css";
 import App from "./App.tsx";
 import { system } from "./theme/index.ts";
 import { ColorModeProvider } from "./components/ui/color-mode.tsx";
+import './i18n';
 
 const queryClient = new QueryClient();
 createRoot(document.getElementById("root")!).render(

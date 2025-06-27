@@ -195,7 +195,7 @@ export const DevelopmentTable = () => {
   ];
   return (
     <Box>
-      <HeaderWithMenu headerTitle="Complex Table" />
+      <HeaderWithMenu headerTitle="Development Table" />
       <CustomTable data={data} columns={columns} />
     </Box>
   );

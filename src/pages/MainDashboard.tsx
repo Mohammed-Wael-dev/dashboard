@@ -15,7 +15,6 @@ export const MainDashboard = () => {
       css={{ "& > *": { borderRadius: "3xl" } }}
       gap="20px"
       mx="30px"
-      // gridTemplateColumns={"1fr 1fr 1fr 1fr"}
       gridTemplateColumns={{
         base: "1fr",
         md: "repeat(2, 1fr)",

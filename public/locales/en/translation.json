@@ -1,0 +1,21 @@
+{
+    "header": {
+        "search": "Search",
+        "notification": {
+          "notificationHeader": "Notification",
+          "markAll": "Mark all As Read",
+          "eachNotification": {
+            "title": "New Update: Horizon UI Dashblard PRO",
+            "details": "A new update for your downloaded item is available"
+          },
+          "avatar": {
+            "avatarTitle": "👋Hey,Adela",
+            "avatarMenu": {
+              "profileSettings": "Profile Settings",
+              "newsletterSettings": "Newsletter Settings",
+              "logout": "Logout"
+            }
+          } 
+        }
+    }
+}
