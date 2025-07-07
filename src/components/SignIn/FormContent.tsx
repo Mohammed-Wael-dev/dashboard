@@ -4,14 +4,15 @@ import { Button, Stack, Flex, Checkbox, Text, Box } from "@chakra-ui/react";
 import { z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { InputFields } from "./InputFields";
-
+import { useTranslation } from "react-i18next";
 const getSchemaByFieldName = (fieldName: string) => {
+  
   const name = fieldName.toLowerCase();
   switch (name) {
     case "email":
-      return z.string().email("Please enter a valid email");
+      return z.string().email(`Please enter a valid email address.`);
     case "password":
-      return z.string().min(8, "Password must be at least 8 characters");
+      return z.string().min(8, `Password must be at least 8 characters.`);
     case "phone":
       return z
         .string()
@@ -31,6 +32,7 @@ const autoSchema = Object.fromEntries(
 const schema = z.object(autoSchema);
 type FormFields = z.infer<typeof schema>;
 export const FormContent = () => {
+  const { t, i18n } = useTranslation();
   const navigate = useNavigate();
   const {
     register,
@@ -39,8 +41,7 @@ export const FormContent = () => {
   } = useForm<FormFields>({
     resolver: zodResolver(schema),
   });
-  const onSubmit = (data: FormFields) => {
-    console.log("Form submitted:", data);
+  const onSubmit = () => {
     navigate("/");
   };
   return (
@@ -52,10 +53,12 @@ export const FormContent = () => {
           inputType={inputType}
         />
         <Flex justifyContent="space-between" px="5px">
-          <Checkbox.Root>
+          <Checkbox.Root dir={i18n.language === "ar" ? "rtl" : "ltr"}>
             <Checkbox.HiddenInput />
             <Checkbox.Control cursor="pointer" rounded="md" />
-            <Checkbox.Label fontSize="0.7rem">Kepp me logged In</Checkbox.Label>
+            <Checkbox.Label fontSize="0.7rem">
+              {t("signIn.form.rememberMe")}
+            </Checkbox.Label>
           </Checkbox.Root>
           <Text
             cursor="pointer"
@@ -63,7 +66,7 @@ export const FormContent = () => {
             fontSize="0.7rem"
             color="text.tertiary"
           >
-            Forgot Password
+            {t("signIn.form.forgotPassword")}
           </Text>
         </Flex>
         <Button
@@ -75,11 +78,11 @@ export const FormContent = () => {
           rounded="2xl"
           w="100%"
         >
-          Sign In
+          {t("signIn.form.signIn")}
         </Button>
         <Flex gapX="5px" px="5px">
           <Text fontWeight="semibold" fontSize="0.7rem" color="text.primary">
-            Not registered yet?
+            {t("signIn.form.notRegestered")}
           </Text>
           <Text
             cursor="pointer"
@@ -87,7 +90,7 @@ export const FormContent = () => {
             fontSize="0.7rem"
             color="text.tertiary"
           >
-            Create an account
+            {t("signIn.form.signUp")}
           </Text>
         </Flex>
       </Stack>

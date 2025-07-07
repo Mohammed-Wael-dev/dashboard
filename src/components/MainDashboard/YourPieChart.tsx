@@ -1,7 +1,10 @@
 import { Box, Flex, Text, Heading } from "@chakra-ui/react";
-import Chart from "react-apexcharts";
+import React, { Suspense } from "react";
+const Chart = React.lazy(() => import("react-apexcharts"));
 import { YourPieChartMenu } from "./YourPieChartMenu";
+import { useTranslation } from "react-i18next";
 export const YourPieChart = () => {
+  const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)", "rgb(247, 248, 254)"],
     legend: {
@@ -24,10 +27,20 @@ export const YourPieChart = () => {
       <Flex h="100%" justifyContent="space-between" flexDir="column">
         <Box>
           <Flex mb="20px" alignItems="center" justifyContent="space-between">
-            <Text fontWeight="semibold">Your Pie Chart</Text>
+            <Text fontWeight="semibold">
+              {t("mainDashboard.yourPieChart.title")}
+            </Text>
             <YourPieChartMenu />
           </Flex>
-          <Chart height="250px" width="100%" type="pie" options={options} series={series} />
+          <Suspense>
+            <Chart
+              height="250px"
+              width="100%"
+              type="pie"
+              options={options}
+              series={series}
+            />
+          </Suspense>
         </Box>
         <Flex justifyContent="space-between" alignItems="end">
           <Box borderEnd="1px solid brand.lightGray">

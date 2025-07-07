@@ -6,9 +6,12 @@ import {
   flexRender,
 } from "@tanstack/react-table";
 import { DropdownMenu } from "../common/DropdownMenu";
-export const CheckTable = () => {
+import { useTranslation } from "react-i18next";
+
+export const TestTable = () => {
+  const { t } = useTranslation();
+
   const { data: quotes, isLoading, error } = useQuotes(6);
-  console.log(quotes);
   const columns = [
     {
       accessorKey: "id",
@@ -42,7 +45,7 @@ export const CheckTable = () => {
       minWidth="0"
     >
       <Flex alignItems="center" justifyContent="space-between">
-        <Text fontWeight="semibold">Check Table</Text>
+        <Text fontWeight="semibold">{t("mainDashboard.testTable.title")}</Text>
         <DropdownMenu />
       </Flex>
 
@@ -70,9 +73,27 @@ export const CheckTable = () => {
           </Table.Header>
         ))}
         <Table.Body>
-          {isLoading && <Text>Loading...</Text>}
-          {!isLoading && !quotes?.length && <Text>No data</Text>}
-          {error && <Text>{error.message}</Text>}
+          {isLoading && (
+            <Table.Row bgColor="transparent">
+              <Table.Cell border="none" colSpan={3}>
+                <Text>Loading...</Text>
+              </Table.Cell>
+            </Table.Row>
+          )}
+          {!isLoading && !quotes?.length && (
+            <Table.Row bgColor="transparent">
+              <Table.Cell border="none" colSpan={3}>
+                <Text>No data</Text>
+              </Table.Cell>
+            </Table.Row>
+          )}
+          {error && (
+            <Table.Row bgColor="transparent">
+              <Table.Cell border="none" colSpan={3}>
+                <Text>{error.message}</Text>
+              </Table.Cell>
+            </Table.Row>
+          )}
           {table.getRowModel().rows.map((row) => (
             <Table.Row key={row.id}>
               {row.getVisibleCells().map((cell) => (

@@ -3,7 +3,9 @@ import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Chart from "react-apexcharts";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 export const WeeklyRevenueChart = () => {
+  const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)", "rgb(247, 248, 254)"],
     legend: {
@@ -83,7 +85,7 @@ export const WeeklyRevenueChart = () => {
       gridColumn={{ base: "span 4", md: "span 2" }}
     >
       <Flex justifyContent="space-between">
-        <Text fontWeight="semibold">Weekly Revenue</Text>
+        <Text fontWeight="semibold">{t("mainDashboard.weeklyRevenueChart.title")}</Text>
         <Flex
           cursor="default"
           gapX="5px"

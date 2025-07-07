@@ -4,7 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Chart from "react-apexcharts";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 export const WaveChart = () => {
+  const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)"],
     legend: {
@@ -44,7 +46,7 @@ export const WaveChart = () => {
       axisBorder: {
         show: false,
       },
-      categories: ["SEP", "OCT", "NOV", "DEC", "JAN", "FEB"],
+      categories: t("mainDashboard.waveChart.months", { returnObjects: true }),
     },
     yaxis: {
       show: false,
@@ -80,7 +82,7 @@ export const WaveChart = () => {
             <FontAwesomeIcon icon={faCalendar} />
           </Icon>
           <Text fontWeight="semibold" fontSize="xs" color="text.secondary">
-            This Month
+            {t("mainDashboard.waveChart.thisMonth")}
           </Text>
         </Flex>
         <Flex
@@ -101,7 +103,7 @@ export const WaveChart = () => {
           $37.5K
         </Heading>
         <Text fontSize="xs" fontWeight="semibold" color="text.secondary">
-          Total Spent
+          {t("mainDashboard.waveChart.totalSpent")}
         </Text>
         <Text fontSize="sm" fontWeight="bold" color="brand.green">
           <span style={{ fontSize: "0.6rem" }}>^</span> +2.45%

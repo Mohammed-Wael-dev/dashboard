@@ -2,7 +2,9 @@ import { Box, Flex, Heading, Text, Icon } from "@chakra-ui/react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import Chart from "react-apexcharts";
+import { useTranslation } from "react-i18next";
 export const DailyTrafficChart = () => {
+  const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)"],
     legend: {
@@ -77,14 +79,14 @@ export const DailyTrafficChart = () => {
       <Flex>
         <Box fontSize={{ md: "sm", lg: "xs" }} w="100%">
           <Text fontWeight="semibold" color="text.secondary">
-            Daily Traffic
+            {t("mainDashboard.dailyTrafficChart.title")}
           </Text>
           <Flex gapX="5px" alignItems="center">
             <Heading mb="10px" fontWeight="semibold" size="2xl">
               2.579
             </Heading>
             <Text fontSize="xs" fontWeight="semibold" color="text.secondary">
-              Visiters
+              {t("mainDashboard.dailyTrafficChart.visitors")}
             </Text>
           </Flex>
         </Box>

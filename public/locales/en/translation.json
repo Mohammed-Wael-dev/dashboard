@@ -1,21 +1,216 @@
 {
-    "header": {
-        "search": "Search",
-        "notification": {
-          "notificationHeader": "Notification",
-          "markAll": "Mark all As Read",
-          "eachNotification": {
-            "title": "New Update: Horizon UI Dashblard PRO",
-            "details": "A new update for your downloaded item is available"
-          },
-          "avatar": {
-            "avatarTitle": "👋Hey,Adela",
-            "avatarMenu": {
-              "profileSettings": "Profile Settings",
-              "newsletterSettings": "Newsletter Settings",
-              "logout": "Logout"
-            }
-          } 
+  "header": {
+    "navigation": {
+      "pages": "Pages",
+      "currentPage": {
+        "main-dashboard": "Main Dashboard",
+        "nft-marketplace": "NFT Marketplace",
+        "data-tables": "Data Tables",
+        "profile": "Profile",
+        "sign-in": "Sign-In"
+      }
+    },
+    "search": "Search...",
+    "notification": {
+      "notificationHeader": "Notification",
+      "markAll": "Mark all As Read",
+      "eachNotification": {
+        "title": "New Update: Horizon UI Dashblard PRO",
+        "details": "A new update for your downloaded item is available"
+      },
+      "avatar": {
+        "title": "👋Hey,Adela",
+        "menu": {
+          "profileSettings": "Profile Settings",
+          "newsletterSettings": "Newsletter Settings",
+          "logout": "Logout"
         }
+      }
     }
+  },
+  "sidebar": {
+    "language": "Change language"
+  },
+  "footer": {
+    "copyright": "© 2025 Horizon UI. All Rights Reserved.",
+    "support": "Support",
+    "license": "License",
+    "termsofUse": "Terms of Use",
+    "blog": "Blog"
+  },
+  "common": {
+    "dropDownMenu": {
+      "panel1": "Panel 1",
+      "panel2": "Panel 2",
+      "panel3": "Panel 3",
+      "panel4": "Panel 4"
+    },
+    "headerWithBtn": {
+      "topcreators": "Top Creators",
+      "history": "History",
+      "seeAll": "See All"
+    },
+    "headerWithMenu": {
+      "developmenttable": "Development Table",
+      "checktable": "Check Table",
+      "4-columnstable": "4-Columns Table",
+      "complextable": "Complex Table",
+      "notifications": "Notifications"
+    }
+  },
+  "mainDashboard": {
+    "accountSummary": {
+      "earnings": "Earnings",
+      "spendThisMonth": "Spend this month",
+      "sales": "Sales",
+      "yourBalance": "Your Balance",
+      "newTaskes": "New Tasks",
+      "totalProjects": "Total Projects"
+    },
+    "waveChart": {
+      "thisMonth": "This Month",
+      "totalSpent": "Total Spent",
+      "months": ["Sep", "Oct", "Nov", "Dec", "Jan", "Feb"]
+    },
+    "weeklyRevenueChart": {
+      "title": "Weekly Revenue"
+    },
+    "testTable": {
+      "title": "Text Table"
+    },
+    "dailyTrafficChart": {
+      "title": "Daily Traffic Chart",
+      "visitors": "Visitors"
+    },
+    "yourPieChart": {
+      "title": "Your Pie Chart",
+      "menu": {
+        "monthly": "Monthly",
+        "weekly": "Weekly",
+        "daily": "Daily"
+      }
+    },
+    "complexTable": {
+      "title": "Complex Table",
+      "table": {
+        "name": "Name",
+        "status": "Status",
+        "date": "Date",
+        "progress": "Progress",
+        "approved": "Approved",
+        "disable": "Disabled",
+        "error": "Error"
+      }
+    },
+    "tasks": {
+      "title": "Tasks",
+      "tasksList": [
+        "Landing Page Design",
+        "Mobile App Design",
+        "Dashboard Builder",
+        "Landing Page Design",
+        "Dashboard Builder"
+      ]
+    }
+  },
+  "nftMarketplace": {
+    "discoverNow": {
+      "header": "Discover, collect and sell extraordinary NFTs",
+      "discription": "Enter in this creative world. Discover now the latest NFTs or start creating your own!",
+      "buttons": {
+        "discoverNow": "Discover Now",
+        "watchVideo": "Watch Video"
+      }
+    },
+    "trendingNFTs": {
+      "header": "Trending NFTs",
+      "art": "Art",
+      "music": "Music",
+      "collection": "Collection",
+      "sports": "Sports",
+      "nftCard": {
+        "by": "By",
+        "currentBid": "Current Bid",
+        "eth": "ETH"
+      }
+    }
+  },
+  "profile": {
+    "socialProfile": {
+      "title": "Product Manager",
+      "posts": "Posts",
+      "followers": "Followers",
+      "following": "Following"
+    },
+    "yourStorage": {
+      "title": "Your Storage",
+      "discription": "Supervise your drive space in the easiest way",
+      "gb": "GB"
+    },
+    "uploadFiles": {
+      "header": "Complete Your Profile",
+      "discription": "Stay on the pulse of distributed projects with an anline whiteboard to plan, coordinate and discuss",
+      "button": "Publish now",
+      "upload": {
+        "header": "Upload Files",
+        "discription": "PNG, JPG, GIF Files are allowed"
+      }
+    },
+    "allProjects": {
+      "header": "All Projects",
+      "discription": "Here you can find more details about your projects. Keep you user engaged by providing meaningful information.",
+      "cards": {
+        "header": "Technology behind the Blockchain",
+        "projectNumber": "Product #1",
+        "details": "See product details"
+      }
+    },
+    "generalInformation": {
+      "header": "General Information",
+      "discription": "Here you can find more details about your projects. Keep you user engaged by providing meaningful information.",
+      "information": {
+        "education": "Education",
+        "educationValue": "Stanford University",
+        "language": "Languages",
+        "languageValue": "English, Spanish, Italian",
+        "department": "Department",
+        "departmentValue": "Product Design",
+        "workHistory": "Work History",
+        "workHistoryValue": "English, Spanish, Italian",
+        "organization": "Organization",
+        "organizationValue": "Simmmple Web LLC",
+        "birthday": "Birthday",
+        "birthdayValue": "20 July 1986"
+      }
+    },
+    "notification": [
+      "Item comment notifications",
+      "Buyer review notifications",
+      "Rating reminders notifications",
+      "Meetups near you notifications",
+      "Company news notifications",
+      "New launches and projectsm",
+      "Monthly product changes",
+      "Subscribe to newsletter",
+      "Email me when someone follows me"
+    ]
+  },
+  "signIn": {
+    "backToDashboard": "Back to Dashboard",
+    "form": {
+      "header": "Sign In",
+      "discription": "Enter your email and password to sign in!",
+      "google": "Sign in with Google",
+      "or": "or",
+      "rememberMe": "Keep me logged in",
+      "forgotPassword": "Forgot password?",
+      "notRegestered": "Not registered yet?",
+      "signUp": "Sign Up",
+      "signIn": "Sign In",
+      "inputFields": {
+        "email": "Email",
+        "password": "Password"
+      }
+    }
+  }
 }

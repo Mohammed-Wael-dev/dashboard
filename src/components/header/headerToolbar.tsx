@@ -6,11 +6,12 @@ import { faBell, faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 import avatarIcon from "../../assets/avatarIcon.webp";
 import { AvatarMenu } from "./avatarMenu";
 import { NotificationMenu } from "./notificationMenu";
-
 import { useSidebarHandler } from "../../store/useSidebarHandler";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useTranslation } from "react-i18next";
 
 export const HeaderToolbar = () => {
+  const { t } = useTranslation();
   const { toggleColorMode, colorMode } = useColorMode();
   const windowWidth = useWindowWidth();
   const setSidebarHandler = useSidebarHandler((state) => state.toggleSidebar);
@@ -32,7 +33,7 @@ export const HeaderToolbar = () => {
           borderRadius="2xl"
           borderColor="transparent"
           bgColor="bg.secondary"
-          placeholder="Search..."
+          placeholder={t(`header.search`)}
           maxW="150px"
         />
       </Flex>

@@ -3,8 +3,10 @@ import { NavLink, useLocation } from "react-router";
 import { useNavStore } from "../../store/useNavStore";
 import { HeaderToolbar } from "../header/headerToolbar";
 import { useWindowWidth } from "../../hooks/useWindowWidth";
+import { useTranslation } from "react-i18next";
 
 export const Header = () => {
+  const { t } = useTranslation();
   const location = useLocation();
   const navigator = useNavStore((state) => state.navigator);
   const setNavigator = useNavStore((state) => state.setNavigator);
@@ -21,7 +23,7 @@ export const Header = () => {
               color="text.primary"
               fontFamily="DM Sans, sans-serif"
             >
-              Pages
+              {t("header.navigation.pages")}
             </Text>
           </NavLink>
           <Text userSelect="none">/</Text>
@@ -32,7 +34,7 @@ export const Header = () => {
               color="text.primary"
               fontFamily="DM Sans, sans-serif"
             >
-              {navigator}
+              {t(`header.navigation.currentPage.${navigator.replace(/\s/g, "-").toLowerCase()}`)}
             </Text>
           </NavLink>
         </Flex>
@@ -43,7 +45,7 @@ export const Header = () => {
           justifyContent="space-between"
           alignItems="center"
         >
-          <Heading size="3xl">{navigator}</Heading>
+          <Heading size="3xl">{t(`header.navigation.currentPage.${navigator.replace(/\s/g, "-").toLowerCase()}`)}</Heading>
           <HeaderToolbar />
         </Flex>
       </Box>

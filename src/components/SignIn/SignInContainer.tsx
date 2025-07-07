@@ -3,7 +3,9 @@ import { NavLink } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { SignInForm } from "./SignInForm";
+import { useTranslation } from "react-i18next";
 export const SignInFormContainer = () => {
+  const { t } = useTranslation();
   return (
     <Flex
       w={{base:"350px", md:"50%"}}
@@ -23,7 +25,7 @@ export const SignInFormContainer = () => {
           gap="10px"
         >
           <FontAwesomeIcon icon={faChevronLeft} />
-          <Text>Back to Dashboard</Text>
+          <Text>{t("signIn.backToDashboard")}</Text>
         </Flex>
       </NavLink>
       <SignInForm />

@@ -14,15 +14,15 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { faHeart as faHeartOutline } from "@fortawesome/free-regular-svg-icons";
 import { useState } from "react";
-
+import { useTranslation } from "react-i18next";
 interface NFTCardData {
   title: string;
   img: any;
   author: string;
   currentBid: number;
-  key?: number;
 }
 export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
+  const { t } = useTranslation();
   const [like, setLike] = useState(false);
   return (
     <Box
@@ -47,7 +47,6 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
             ) : (
               <Icon
                 onClick={() => setLike(true)}
-                pos="absolute"
                 color="white"
                 rounded="full"
                 p="5px"
@@ -114,7 +113,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
               </Flex>
             </Flex>
             <Text fontSize="0.8rem" color="brand.gray">
-              By {author}
+              {t("nftMarketplace.trendingNFTs.nftCard.by")} {author}
             </Text>
           </Flex>
         </Flex>
@@ -127,7 +126,7 @@ export const NFTCard = ({ title, img, author, currentBid }: NFTCardData) => {
         mt="10px"
       >
         <Text fontWeight="semibold" fontSize="0.9rem" color="text.tertiary">
-          Current Bid: {currentBid}ETH
+          {`${t("nftMarketplace.trendingNFTs.nftCard.currentBid")} ${currentBid} ${t("nftMarketplace.trendingNFTs.nftCard.eth")}`}
         </Text>
         <Button bgColor="bg.tertiary" color="white" size="sm" rounded="2xl">
           Place bid

@@ -14,24 +14,25 @@ import {
   faGear,
   faEllipsis,
 } from "@fortawesome/free-solid-svg-icons";
-
+import { useTranslation } from "react-i18next";
 export const DropdownMenu = () => {
+  const { t, i18n } = useTranslation();
   const CheckTableMenuContent = [
     {
       icon: faUser,
-      label: "Panel 1",
+      label: t("common.dropDownMenu.panel1"),
     },
     {
       icon: faStore,
-      label: "Panel 2",
+      label: t("common.dropDownMenu.panel2"),
     },
     {
       icon: faLightbulb,
-      label: "Panel 3",
+      label: t("common.dropDownMenu.panel3"),
     },
     {
       icon: faGear,
-      label: "Panel 4",
+      label: t("common.dropDownMenu.panel4"),
     },
   ];
   interface MenuItemProps {
@@ -61,7 +62,7 @@ export const DropdownMenu = () => {
         <Portal>
           <Menu.Positioner>
             <Menu.Content bgColor="bg.primary" borderRadius="xl" p="10px">
-              <Menu.ItemGroup>
+              <Menu.ItemGroup dir={i18n.language === "ar" ? "rtl" : "ltr"}>
               {CheckTableMenuContent.map(
                 ({ icon, label }: MenuItemProps, index: number) => (
                   <Menu.Item

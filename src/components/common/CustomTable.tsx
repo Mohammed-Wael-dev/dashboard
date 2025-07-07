@@ -31,7 +31,7 @@ export const CustomTable = ({ data, columns }: CustomTableProps) => {
             key={headerGroup.id}
           >
             {headerGroup.headers.map((header) => (
-              <Table.ColumnHeader color="text.secondary" key={header.id}>
+              <Table.ColumnHeader color="text.secondary" ps="0" key={header.id}>
                 {header.isPlaceholder
                   ? null
                   : flexRender(

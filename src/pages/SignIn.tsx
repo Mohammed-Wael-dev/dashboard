@@ -4,10 +4,16 @@ import SignInInformation from "../assets/signInInformation.webp";
 import { useWindowWidth } from "../hooks/useWindowWidth";
 import { Footer } from "../components/Layout/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
+import {
+  faMoon,
+  faSun,
+  faEarthAmericas,
+} from "@fortawesome/free-solid-svg-icons";
 import { useColorMode } from "../components/ui/color-mode";
+import { useTranslation } from "react-i18next";
 
 export const SignIn = () => {
+  const { i18n } = useTranslation();
   const { toggleColorMode, colorMode } = useColorMode();
 
   const windowWidth = useWindowWidth();
@@ -32,22 +38,44 @@ export const SignIn = () => {
       <Box pos="absolute" bottom="0" w="100%">
         <Footer />
       </Box>
-      <IconButton
-        onClick={toggleColorMode}
+      <Flex
+        flexDir="column"
         position="fixed"
+        {...(i18n.language === "en" ? { right: "1rem" } : { left: "1rem" })}
         top="1rem"
-        right="1rem"
-        w="40px"
-        h="40px"
-        p="0"
-        rounded="full"
-        bgColor="brand.purple"
-        color="white"
-        aria-label="Toggle color mode"
-        zIndex={999}
+        gapY="15px"
       >
-        <FontAwesomeIcon icon={colorMode === "light" ? faMoon : faSun} />
-      </IconButton>
+        <IconButton
+          onClick={toggleColorMode}
+          w="40px"
+          h="40px"
+          p="0"
+          rounded="full"
+          bgColor="brand.purple"
+          color="white"
+          aria-label="Toggle color mode"
+          zIndex={999}
+        >
+          <FontAwesomeIcon icon={colorMode === "light" ? faMoon : faSun} />
+        </IconButton>
+        <IconButton
+          onClick={() =>
+            i18n.language === "en"
+              ? i18n.changeLanguage("ar")
+              : i18n.changeLanguage("en")
+          }
+          w="40px"
+          h="40px"
+          p="0"
+          rounded="full"
+          bgColor="brand.purple"
+          color="white"
+          aria-label="Toggle color mode"
+          zIndex={999}
+        >
+          <FontAwesomeIcon icon={faEarthAmericas} />
+        </IconButton>
+      </Flex>
     </Box>
   );
 };

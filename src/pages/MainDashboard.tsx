@@ -2,7 +2,7 @@ import { Grid } from "@chakra-ui/react";
 import { AccountSammary } from "../components/MainDashboard/AccountSummary";
 import { WaveChart } from "../components/MainDashboard/WaveChart";
 import { WeeklyRevenueChart } from "../components/MainDashboard/WeeklyRevenueChart";
-import { CheckTable } from "../components/MainDashboard/CheckTable";
+import { TestTable } from "../components/MainDashboard/TestTable";
 import { DailyTrafficChart } from "../components/MainDashboard/DailyTrafficChart";
 import { YourPieChart } from "../components/MainDashboard/YourPieChart";
 import { ComplexTable } from "../components/MainDashboard/ComplexTable";
@@ -25,7 +25,7 @@ export const MainDashboard = () => {
       <AccountSammary />
       <WaveChart />
       <WeeklyRevenueChart />
-      <CheckTable />
+      <TestTable />
       <DailyTrafficChart />
       <YourPieChart />
       <ComplexTable />

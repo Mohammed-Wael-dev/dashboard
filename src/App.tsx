@@ -1,25 +1,42 @@
-import { Layout } from "./components/Layout/Layout";
-import { MainDashboard } from "./pages/MainDashboard";
-import { NFTMarketplace } from "./pages/NFTMarketplace";
-import { DataTables } from "./pages/DataTables";
-import { BrowserRouter, Route, Routes } from "react-router";
-import { Profile } from "./pages/Profile";
-import { SignIn } from "./pages/SignIn";
-import { RTLAdmin } from "./pages/RTLAdmin";
+import { BrowserRouter } from "react-router";
+import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
+import { useGlobalLoading } from "./hooks/useGlobalLoading";
+import { AppRoutes } from "./AppRoutes";
+import { LoadingOverlay } from "./components/Layout/LoadingOverlay";
 function App() {
+  const { i18n } = useTranslation();
+  const isLoading = useGlobalLoading();
+  const [showApp, setShowApp] = useState(false);
+  const [delayPassed, setDelayPassed] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setDelayPassed(true);
+    }, 300);
+    return () => clearTimeout(timer);
+  }, []);
+  useEffect(() => {
+    if (!isLoading && delayPassed) {
+      setShowApp(true);
+    }
+  }, [isLoading, delayPassed]);
+
+  const shouldShowLoader = !showApp;
+  useEffect(() => {
+    const currentLang = i18n.language;
+    const dir = currentLang === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = dir;
+    document.documentElement.lang = currentLang;
+  }, [i18n.language]);
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<MainDashboard />} />,
-          <Route path="nft-marketplace" element={<NFTMarketplace />} />,
-          <Route path="data-tables" element={<DataTables />} />,
-          <Route path="profile" element={<Profile />} />,
-        </Route>
-        <Route path="rtl-admin" element={<RTLAdmin />} />,
-        <Route path="sign-in" element={<SignIn />} />,
-      </Routes>
-    </BrowserRouter>
+    <>
+      {shouldShowLoader && <LoadingOverlay />}
+      {showApp && (
+        <BrowserRouter>
+          <AppRoutes />
+        </BrowserRouter>
+      )}
+    </>
   );
 }
 

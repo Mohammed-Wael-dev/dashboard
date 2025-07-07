@@ -1,28 +1,24 @@
 import { create } from "zustand";
-const curruntPage = [
+const currentPage = [
   {
     to: "/",
-    label: "Main Dashboard",
+    id: "main-dashboard",
   },
   {
     to: "/nft-marketplace",
-    label: "NFT Marketplace",
+    id: "nft-marketplace",
   },
   {
     to: "/data-tables",
-    label: "Data Tables",
+    id: "data-tables",
   },
   {
     to: "/profile",
-    label: "Profile",
+    id: "profile",
   },
   {
     to: "/sign-in",
-    label: "Sign In",
-  },
-  {
-    to: "/rtl",
-    label: "RTL Admin",
+    id: "sign-in",
   },
 ];
 interface StoreState {
@@ -32,7 +28,7 @@ interface StoreState {
 
 export const useNavStore = create<StoreState>((set) => ({
   navigator:
-    curruntPage.find((item) => item.to === window.location.pathname)?.label ||
-    "Main Dashboard",
+    currentPage.find((item) => item.to === window.location.pathname)?.id ||
+    "main-dashboard",
   setNavigator: (navigator: string) => set({ navigator }),
 }));

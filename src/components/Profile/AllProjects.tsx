@@ -4,21 +4,21 @@ import project2 from "../../assets/project2.webp";
 import project3 from "../../assets/project3.webp";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPen } from "@fortawesome/free-solid-svg-icons";
-
+import { useTranslation } from "react-i18next";
 export const AllProjects = () => {
+  const { t } = useTranslation();
   const data = [project1, project2, project3];
   return (
     <Box minH="fit" h="500px" bg="bg.primary">
       <Heading fontSize="0.9rem" fontWeight="semibold">
-        All Projects
+        {t("profile.allProjects.header")}
       </Heading>
       <Text
         fontSize={{ md: "0.6rem", lg: "0.7rem" }}
         color="text.secondary"
         mt="2"
       >
-        Here you can find more details about your projects. Keep you user
-        engaged by providing meaningful information.
+        {t("profile.allProjects.discription")}
       </Text>
       <Box>
         {data.map((project, index) => (
@@ -39,7 +39,7 @@ export const AllProjects = () => {
                 fontSize={{ base: "0.7rem", md: "0.6rem", xl: "0.7rem" }}
                 fontWeight="semibold"
               >
-                Technology behind the Blockchain
+                {t("profile.allProjects.cards.header")}
               </Heading>
               <Flex justifyContent="space-between">
                 <Flex gapX="5px">
@@ -47,14 +47,14 @@ export const AllProjects = () => {
                     color="brand.gray"
                     fontSize={{ base: "0.7rem", md: "0.5rem", xl: "0.7rem" }}
                   >
-                    Project #1.
+                    {t("profile.allProjects.cards.projectNumber")}
                   </Text>
                   <Text
                     color="text.tertiary"
                     cursor="pointer"
                     fontSize={{ base: "0.7rem", sm: "0.5rem", xl: "0.7rem" }}
                   >
-                    See product details
+                    {t("profile.allProjects.cards.details")}
                   </Text>
                 </Flex>
                 <Icon

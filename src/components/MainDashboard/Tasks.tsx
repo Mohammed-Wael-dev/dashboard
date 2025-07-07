@@ -2,15 +2,12 @@ import { Box, Flex, Text, Icon, List, Checkbox } from "@chakra-ui/react";
 import { DropdownMenu } from "../common/DropdownMenu";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import { useTranslation } from "react-i18next";
 
 export const Tasks = () => {
-  const listContent = [
-    "Landing Page Design",
-    "Mobile App Design",
-    "Dashboard Builder",
-    "Landing Page Design",
-    "Dashboard Builder",
-  ];
+  const { t,i18n } = useTranslation();
+  const listContentRaw = t("mainDashboard.tasks.tasksList", { returnObjects: true });
+  const listContent = Array.isArray(listContentRaw) ? listContentRaw : [];
   return (
     <Box
       w="100%"
@@ -31,14 +28,14 @@ export const Tasks = () => {
           >
             <FontAwesomeIcon size="lg" icon={faCircleCheck} />
           </Icon>
-          <Text fontWeight="semibold">Tasks</Text>
+          <Text fontWeight="semibold">{t("mainDashboard.tasks.title")}</Text>
         </Flex>
         <DropdownMenu />
       </Flex>
       <List.Root listStyle="none">
-        {listContent.map((item) => (
-          <Flex alignItems="center" key={item}>
-            <Checkbox.Root p="10px">
+        {listContent.map((item, index) => (
+          <Flex alignItems="center" key={index}>
+            <Checkbox.Root dir={i18n.language === "ar" ? "rtl" : "ltr"} p="10px">
               <Checkbox.HiddenInput />
               <Checkbox.Control rounded="md"/>
               <Checkbox.Label>{item}</Checkbox.Label>

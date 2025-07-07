@@ -1,46 +1,44 @@
 import { Box, Flex, Heading, Text, Grid } from "@chakra-ui/react";
+import { useTranslation } from "react-i18next";
 export const GeneralInformation = () => {
+  const { t } = useTranslation();
   const data = [
     {
-      title: "Education",
-      description: "Stanford University",
+      title: t("profile.generalInformation.information.education"),
+      description: t("profile.generalInformation.information.educationValue"),
     },
     {
-      title: "Languages",
-      description: "English, Spanish, Italian",
+      title: t("profile.generalInformation.information.language"),
+      description: t("profile.generalInformation.information.languageValue"),
     },
     {
-      title: "Department",
-      description: "Product Design",
+      title: t("profile.generalInformation.information.department"),
+      description: t("profile.generalInformation.information.departmentValue"),
     },
     {
-      title: "Work History",
-      description: "English, Spanish, Italian",
+      title: t("profile.generalInformation.information.workHistory"),
+      description: t("profile.generalInformation.information.workHistoryValue"),
     },
     {
-      title: "Organization",
-      description: "Simmmple Web LLC",
+      title: t("profile.generalInformation.information.organization"),
+      description: t("profile.generalInformation.information.organizationValue"),
     },
     {
-      title: "Birthday",
-      description: "20 July 1986",
+      title: t("profile.generalInformation.information.birthday"),
+      description: t("profile.generalInformation.information.birthdayValue"),
     },
   ];
   return (
     <Box minH="fit" h="500px" bg="bg.primary">
       <Heading fontSize="0.9rem" fontWeight="semibold">
-        General Information
+        {t("profile.generalInformation.header")}
       </Heading>
       <Text
         fontSize={{ md: "0.6rem", lg: "0.7rem" }}
         color="text.secondary"
         mt="2"
       >
-        As we live, our hearts turn colder. Cause pain is what we go through as
-        we become older. We get insulted by others, lose trust for those others.
-        We get back stabbed by friends. It becomes harder for us to give others
-        a hand. We get our heart broken by people we love, even that we give
-        them all...
+        {t("profile.generalInformation.discription")}
       </Text>
       <Grid gridTemplateColumns="1fr 1fr" flexWrap="wrap" gap="10px" mt="10px">
         {data.map(({ title, description }, index) => (
