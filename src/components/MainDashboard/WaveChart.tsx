@@ -1,11 +1,13 @@
 import { Box, Flex, Heading, Icon, Text } from "@chakra-ui/react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCalendar } from "@fortawesome/free-regular-svg-icons";
 import Chart from "react-apexcharts";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useColorMode } from "../ui/color-mode";
+
 export const WaveChart = () => {
+  const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)"],
@@ -51,6 +53,9 @@ export const WaveChart = () => {
     yaxis: {
       show: false,
     },
+    tooltip: {
+      theme: colorMode === "light" ? "light" : "dark",
+    },
   };
   const series = [
     {
@@ -64,7 +69,7 @@ export const WaveChart = () => {
   ];
   return (
     <Box
-    h="500px"
+      h="500px"
       p="20px"
       bgColor="bg.primary"
       gridColumn={{ base: "span 4", md: "span 2" }}
@@ -109,7 +114,13 @@ export const WaveChart = () => {
           <span style={{ fontSize: "0.6rem" }}>^</span> +2.45%
         </Text>
       </Box>
-      <Chart height="300px" width="100%" type="line" options={options} series={series} />
+      <Chart
+        height="300px"
+        width="100%"
+        type="line"
+        options={options}
+        series={series}
+      />
     </Box>
   );
 };

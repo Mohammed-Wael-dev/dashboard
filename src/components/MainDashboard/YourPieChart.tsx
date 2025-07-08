@@ -3,10 +3,12 @@ import React, { Suspense } from "react";
 const Chart = React.lazy(() => import("react-apexcharts"));
 import { YourPieChartMenu } from "./YourPieChartMenu";
 import { useTranslation } from "react-i18next";
+import { useColorMode } from "../ui/color-mode";
 export const YourPieChart = () => {
+    const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const options = {
-    colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)", "rgb(247, 248, 254)"],
+    colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)", "rgb(227, 208, 154)"],
     legend: {
       show: false,
     },
@@ -14,6 +16,9 @@ export const YourPieChart = () => {
       enabled: false,
     },
     labels: ["Your files", "System", "empty"],
+    tooltip: {
+      theme: colorMode === "light" ? "light" : "dark",
+    },
   };
   const series = [63, 25, 20];
   return (

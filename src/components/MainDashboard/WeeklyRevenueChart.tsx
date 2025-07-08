@@ -1,10 +1,11 @@
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Chart from "react-apexcharts";
 import { faChartSimple } from "@fortawesome/free-solid-svg-icons";
 import { useTranslation } from "react-i18next";
+import { useColorMode } from "../ui/color-mode";
 export const WeeklyRevenueChart = () => {
+    const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)", "rgb(106, 210, 255)", "rgb(247, 248, 254)"],
@@ -61,6 +62,9 @@ export const WeeklyRevenueChart = () => {
     },
     yaxis: {
       show: false,
+    },
+        tooltip: {
+      theme: colorMode === "light" ? "light" : "dark",
     },
   };
   const series = [

@@ -3,7 +3,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCaretUp } from "@fortawesome/free-solid-svg-icons";
 import Chart from "react-apexcharts";
 import { useTranslation } from "react-i18next";
+import { useColorMode } from "../ui/color-mode";
+
 export const DailyTrafficChart = () => {
+  const { colorMode } = useColorMode();
   const { t } = useTranslation();
   const options = {
     colors: ["rgb(66, 42, 251)"],
@@ -61,6 +64,9 @@ export const DailyTrafficChart = () => {
     yaxis: {
       show: false,
     },
+    tooltip: {
+      theme: colorMode === "light" ? "light" : "dark",
+    },
   };
   const series = [
     {
@@ -102,7 +108,13 @@ export const DailyTrafficChart = () => {
           <Text fontSize="0.7rem"> +2.45%</Text>
         </Flex>
       </Flex>
-      <Chart height="400px" width="100%" type="bar" options={options} series={series} />
+      <Chart
+        height="400px"
+        width="100%"
+        type="bar"
+        options={options}
+        series={series}
+      />
     </Box>
   );
 };
